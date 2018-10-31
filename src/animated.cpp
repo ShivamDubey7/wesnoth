@@ -25,10 +25,12 @@
 // one instance of the current_ticks variable
 namespace {
 	int current_ticks = 0;
+	int prev_ticks = 0;
 }
 
 void new_animation_frame()
 {
+	prev_ticks = current_ticks;
 	current_ticks = SDL_GetTicks();
 }
 
